@@ -9,5 +9,9 @@ func main() {
 		c.Send("No HElLo foR tHe wOrLD")
 	})
 
+	app.Get("/:param", func(c *fiber.Ctx) {
+		c.Send("pAraMi iS " + c.Params("param"))
+	})
+
 	app.Listen(8080)
 }
